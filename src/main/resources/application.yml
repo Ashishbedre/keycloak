@@ -1,0 +1,29 @@
+server:
+  port: 8083
+
+#keycloak:
+#  auth-server-url: http://192.168.0.240:31500
+#  realm: niral_realm
+#  client-id: niral_client
+#  grant-type: password
+#  scope: openid
+
+spring:
+  application:
+    name: keyclock
+keycloak:
+  auth-server-url: http://192.168.0.240:31500
+  realm: anurag
+  client-id: niral_api
+  grant-type: password
+  scope: openid
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
