@@ -1,6 +1,6 @@
 package com.alibou.keycloak;
 
-import lombok.RequiredArgsConstructor;
+//import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
@@ -13,10 +13,14 @@ import static org.springframework.security.config.http.SessionCreationPolicy.STA
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class SecurityConfig {
 
     private final JwtAuthConverter jwtAuthConverter;
+
+    public SecurityConfig(JwtAuthConverter jwtAuthConverter) {
+        this.jwtAuthConverter = jwtAuthConverter;
+    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

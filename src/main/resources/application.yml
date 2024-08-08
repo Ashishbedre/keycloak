@@ -3,10 +3,10 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8080/realms/anurag
+          issuer-uri: http://192.168.0.240:31500/realms/anurag
           jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
 server:
-  port: 8084
+  port: 8087
 
 jwt:
   auth:
